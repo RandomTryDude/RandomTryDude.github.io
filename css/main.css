@@ -1,0 +1,81 @@
+<style>
+    a {
+      text-decoration: none;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: black;
+    }
+  
+    .content-box,.header-box {
+      padding: 20px;
+      border: 2px solid white;
+      text-align: center;
+      color: white;
+    }
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 30%;
+      text-align: center;
+      padding: 5px;
+      background-color: #abbaba;
+      color: #000;
+    }
+    .social-icons {
+      margin: 0 5px;
+      color: #000;
+    }
+    header {
+      position: fixed;
+      background: #000;
+      width: 25%;
+      height: 90px;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      z-index: 90;
+    }
+    header .header-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    header .header-logo {
+      text-align: center;
+      margin-top: 10px;
+      padding-left: 40px;
+      float: left;
+    }
+    header .header-brand {
+      font-family: Catamaran;
+      font-size: 1.2vw;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 70px;
+      padding: 0 20px; 
+      float: left;
+    }
+
+    header .header-brand:hover {
+      text-decoration: none;
+    }
+
+
+    header .header-box {
+      border: 2px solid white;
+      display: left;
+      align-items: left;
+    }
+    
+
+  </style>
