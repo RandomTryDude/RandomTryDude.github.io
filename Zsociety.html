@@ -16,7 +16,7 @@
     }
   </style>
 </head>
-<body>
+<body class="casual">
 
   <header>
     <div class="header-box">
@@ -37,14 +37,28 @@
          </label>
         
       </ul>
-    </nav>
+    </nav>    
   </header>
+  
+  <body class="term">
+  <div class="terminal-window primary-bg" onclick="document.getElementById('dummyKeyboard').focus();">
+    <div class="terminal-output" id="terminalOutput">
+      <div class="terminal-line">
+        <span class="help-msg">Welcome to the Zsociety <span class="code">help</span> for a list of supported commands.</span> <br> <br>
+      </div>
+    </div>
+    <div class="terminal-line">
+      <span class="id">┌──Zsociety</span><span class="cl">@</span><span class="pc-name">Team</span><br><span class="directory">└─$</span> <span class="user-input" id="userInput"></span>
+      <input type="text" id="dummyKeyboard" class="dummy-keyboard" oninput="updateUserInput(this.value)" />
+    </div>
+  </div>
 
 
-  <div class="content-box">
-    <h1>Team : ZSociety</h1>
-    <p>Objective : We Strive to be better</p>
-    <p style="color: red; display : none;" >Don't commit tax fraud</p>
+
+    <!--
+    <h2>Toggle Dark/Light Mode</h2>
+	<button onclick="myFunction()">Toggle dark mode</button>
+	-->
   </div>
   <footer>
     <a href="https://www.linkedin.com/company/zdsociety/" target="_blank">ZSociety LinkedIn</a>
@@ -53,6 +67,8 @@
   </footer>
 
   
+ <!--Script To toggle dark mode -->
+ <script src="js/main.js"></script>
 <script>
   function setDarkModePreference(isDarkModeEnabled) {
     if (isDarkModeEnabled) {
@@ -93,6 +109,7 @@
     Darkmode();
   });
 </script>
+
 
 </body>
 </html>

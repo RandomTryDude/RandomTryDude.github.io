@@ -1,5 +1,8 @@
 /* Light Mode (default) */
 body {
+
+}
+  .casual {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +16,7 @@ body {
   text-align: center;
   color: black;
 }
+
 
 header {
   position: fixed;
@@ -134,3 +138,80 @@ footer {
   color: white;
 }
 */
+
+
+    body .term{
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+      background-color: #2d2d2d;
+      color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .terminal-window {
+      width: 80%;
+      max-width: 600px;
+      height: 60%;
+      max-height: 400px;
+      overflow: auto;
+      border: 2px solid #757575;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #23252E;
+    }
+
+    .terminal-output {
+      margin-bottom: 10px;
+      overflow: auto;
+      max-height: calc(100% - 40px);
+      color: #fff;
+    }
+
+    .terminal-line {
+      margin-bottom:10px;
+      
+    }
+
+    .help-msg {
+      color: #4caf50;
+    }
+    .cl{
+      color: #fff;
+    }
+
+    .code {
+      color: #e0e0e0;
+    }
+
+    .id,
+    .pc-name,
+    .directory{
+      color: #277BF5; /* text color mate */
+    }
+    .user-input {
+      color: #F5F5F5;
+    }
+
+    .dummy-keyboard {
+      opacity: 0;
+      position: absolute;
+    }
+
+
+    input {
+      width: calc(100% - 20px);
+      padding: 5px;
+      font-family: monospace;
+      color: #e0e0e0;
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+
+    input:focus {
+      border: none;
+      outline: none;
+    }
