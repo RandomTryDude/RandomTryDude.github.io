@@ -1,5 +1,6 @@
 /* Light Mode (default) */
 body {
+ overflow-x: hidden;
 
 }
   .casual {
@@ -165,7 +166,7 @@ footer {
 
     .terminal-output {
       margin-bottom: 10px;
-      overflow: auto;
+      overflow-y: hidden;
       max-height: calc(100% - 40px);
       color: #fff;
     }
