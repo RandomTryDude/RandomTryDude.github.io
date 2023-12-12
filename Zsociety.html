@@ -44,6 +44,7 @@
   <div class="content-box">
     <h1>Team : ZSociety</h1>
     <p>Objective : We Strive to be better</p>
+    <p style="color: red; display : none;" >Don't commit tax fraud</p>
   </div>
   <footer>
     <a href="https://www.linkedin.com/company/zdsociety/" target="_blank">ZSociety LinkedIn</a>
@@ -52,12 +53,46 @@
   </footer>
 
   
- <!--Script To toggle dark mode -->
 <script>
+  function setDarkModePreference(isDarkModeEnabled) {
+    if (isDarkModeEnabled) {
+      localStorage.setItem('preference', 'DarkMode');
+    } else {
+      localStorage.setItem('preference', 'LightMode');
+    }
+  }
+
+  function getDarkModePreference() {
+    return localStorage.getItem('preference');
+  }
+
+  function Darkmode() {
+    var element = document.body;
+    var checkbox = document.getElementById("toggle_checkbox");
+
+    // Check if dark mode is enabled in localStorage
+    var darkModePreference = getDarkModePreference();
+    if (darkModePreference === 'DarkMode') {
+      element.classList.add('dark-mode');
+      checkbox.checked = true;
+    }
+  }
+
   function ColorMode() {
     var element = document.body;
     element.classList.toggle("dark-mode");
-}
+
+    // Save the dark mode state in localStorage
+    var isDarkModeEnabled = element.classList.contains("dark-mode");
+    setDarkModePreference(isDarkModeEnabled);
+  }
+
+  // Call Darkmode() on page load
+  document.addEventListener("DOMContentLoaded", function () {
+    
+    Darkmode();
+  });
 </script>
+
 </body>
 </html>
