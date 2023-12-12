@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /NoFlagThere.html
+Disallow: /noflaghere.html
