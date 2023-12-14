@@ -34,7 +34,6 @@ function displayCommandOutput(command, response) {
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
-
 function updateUserInput(value) {
   // Update user input display
   userInput.textContent = value;
@@ -44,8 +43,12 @@ dummyKeyboard.addEventListener('keydown', function (e) {
   if (e.key === 'Enter') {
     // Handle Enter key press
     const command = dummyKeyboard.value.trim();
-    const response = getCommandResponse(command);
-    displayCommandOutput(command, response);
+    if (command.toLowerCase() === 'clear') {
+      clearTerminal();
+    } else {
+      const response = getCommandResponse(command);
+      displayCommandOutput(command, response);
+    }
 
     // Clear input after processing
     dummyKeyboard.value = '';
@@ -53,16 +56,27 @@ dummyKeyboard.addEventListener('keydown', function (e) {
   }
 });
 
+function clearTerminal() {
+  // Clear all terminal output
+  terminalOutput.innerHTML = '';
+
+  // Add welcome message back
+  const welcomeMessage = document.createElement('div');
+  welcomeMessage.classList.add('terminal-line');
+  welcomeMessage.innerHTML = '<span class="help-msg">Welcome to the Zsociety <span class="code">help</span> for a list of supported commands.</span> <br> <br>';
+  terminalOutput.appendChild(welcomeMessage);
+}
+
 function getCommandResponse(command) {
   // Command & responses
   const commands = {
-    'help': 'Available commands: social, help, about, contact , Zsociety , todo',
+    'help': 'Available commands: social, help, about, contact , Zsociety , todo, clear',
     'social': 'You can find us on https://discord.com/invite/da4fD5pf4e & https://www.linkedin.com/company/zdsociety/ \n both Links are usable and will open a new windows',
     'about': 'Terminal-Like, Learn more about the team',
     'contact': '==============================\nSpaceJam on the Network, Contact unreachable\n============================== \n + ................... + \n Contact Aborted \n  + ................... + ',
     'HiddenSecret': "Can't believe you found me, Take it, you own it Zsociety{S0m3_C0mm4nd5_4r3_h1dd3n}",
-     'Zsociety': 'We are a team of enthusiasts dedicated to exploring and sharing knowledge in various domains.\n Our passion drives us to push boundaries and contribute to the ever-growing world of technology and beyond.\nJoin us on this exciting journey!',
-     'todo' : 'implement a clear command & workaround for case-sensitive content ',
+    'Zsociety': 'We are a team of enthusiasts dedicated to exploring and sharing knowledge in various domains.\n Our passion drives us to push boundaries and contribute to the ever-growing world of technology and beyond.\nJoin us on this exciting journey!',
+    'todo': 'implement a clear command & workaround for case-sensitive content ',
   };
 
   return commands[command] || `Ain't seen no ${command} in help`;

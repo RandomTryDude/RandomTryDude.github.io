@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RandomTryDude | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" width="70">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sunnydark.css">
+  <link href='https://fonts.googleapis.com/css?family=Catamaran' rel='stylesheet'>
+  <!-- Deactivate the line under hyperlink -->
+  <style>
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-box">
+      <a href="index.html" class="header-logo"><img src="img/logo.png" alt="Logo" width="75"></a>
+      <a href="index.html" class="header-brand"> RandomTryDude </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Zsociety.html">The Team</a></li>
+        <li><a href="ctf.html">CTF Writeups</a></li>
+
+        <input type="checkbox" id="toggle_checkbox" onclick="ColorMode()">
+        <label for="toggle_checkbox">
+          <div id="star">
+            <div class="star" id="star-1">★</div>
+            <div class="star" id="star-2">★</div>
+          </div>
+          <div id="moon"></div>
+        </label>
+
+      </ul>
+    </nav>
+  </header>
+
+  <div class="left-menu">
+    <ul>
+      <li class="dropdown">
+        <a href="#">CTF_NAME</a>
+        <div class="dropdown-content">
+        <p>BY CATEGORIES</p>
+          <a href="#">Each</a><br> <!-- those are solved by categories ; will just open the CTF_NAME section in the pwn part of the solve -->
+          <a href="#">Solved</a><br>
+          <a href="#">Category</a>
+          <!-- Add more submenu items as needed -->
+        </div>
+      </li>
+      <!--
+      <li><a href="#">Writeup 2</a></li>
+      <li><a href="#">Writeup 3</a></li>
+      Add more writeup links as needed -->
+    </ul>
+  </div>
+
+  <!-- <h2>Toggle Dark/Light Mode</h2>
+  <button onclick="myFunction()">Toggle dark mode</button> -->
+
+  </div>
+  <footer>
+    <a href="https://www.linkedin.com/company/zdsociety/" target="_blank">ZSociety LinkedIn</a>
+    <a href="https://discord.com/invite/da4fD5pf4e" target="_blank">ZSociety Discord</a>
+    <p>© 2023 No touchy touchy the logo</p>
+  </footer>
+
+  <!--Script To toggle dark mode -->
+  <script>
+    function setDarkModePreference(isDarkModeEnabled) {
+      if (isDarkModeEnabled) {
+        localStorage.setItem('preference', 'DarkMode');
+      } else {
+        localStorage.setItem('preference', 'LightMode');
+      }
+    }
+
+    function getDarkModePreference() {
+      return localStorage.getItem('preference');
+    }
+
+    function Darkmode() {
+      var element = document.body;
+      var checkbox = document.getElementById("toggle_checkbox");
+
+      // Check if dark mode is enabled in localStorage
+      var darkModePreference = getDarkModePreference();
+      if (darkModePreference === 'DarkMode') {
+        element.classList.add('dark-mode');
+        checkbox.checked = true;
+      }
+    }
+
+    function ColorMode() {
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+
+      // Save the dark mode state in localStorage
+      var isDarkModeEnabled = element.classList.contains("dark-mode");
+      setDarkModePreference(isDarkModeEnabled);
+    }
+
+    // Call Darkmode() on page load
+    document.addEventListener("DOMContentLoaded", function () {
+
+      Darkmode();
+    });
+  </script>
+
+</body>
+</html>
