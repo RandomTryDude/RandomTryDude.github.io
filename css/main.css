@@ -63,7 +63,10 @@ body {
 .dropdown-content a{
  color:#fff;
  font-size:16px;
- padding:10px;
+ padding: 10px;
+ border: 1px solid black;
+ width:50%;
+ display:block; /* Concern the block under CTF_NAME */
 }
 .dropdown-content p{
   padding: 5px;
@@ -71,6 +74,19 @@ body {
   text-align: center;
   color: white;
 }
+.writeups {
+  position: absolute;
+  left: 50%;
+  min-height: 90vh;
+  top: 11%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: black;
+  padding: 50px;
+}
+
+
 
 
 header {
@@ -185,6 +201,7 @@ footer {
 .dark-mode label {
   border: 2px solid #fff;
 }
+
 
   
 
