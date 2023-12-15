@@ -76,7 +76,7 @@ function getCommandResponse(command) {
     'contact': '==============================\nSpaceJam on the Network, Contact unreachable\n============================== \n + ................... + \n Contact Aborted \n  + ................... + ',
     'HiddenSecret': "Can't believe you found me, Take it, you own it Zsociety{S0m3_C0mm4nd5_4r3_h1dd3n}",
     'Zsociety': 'We are a team of enthusiasts dedicated to exploring and sharing knowledge in various domains.\n Our passion drives us to push boundaries and contribute to the ever-growing world of technology and beyond.\nJoin us on this exciting journey!',
-    'todo': 'implement a clear command & workaround for case-sensitive content ',
+    'todo': 'implement workaround for case-sensitive content ',
   };
 
   return commands[command] || `Ain't seen no ${command} in help`;
