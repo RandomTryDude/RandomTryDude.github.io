@@ -2,7 +2,7 @@
 body {
 
 }
-  .casual {
+  .casual,.shenanigans{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +16,9 @@ body {
   border: 2px solid black;
   text-align: center;
   color: black;
+}
+
+
 }
 .content-box a{
   border: 1px solid white;
@@ -103,9 +106,13 @@ body {
   padding-top:10px;
   padding-bottom:10px;
   min-height:10vh;
+  
 }
-
-
+.codeblock .indent{
+      display: block;
+      margin-left: 40px; /* used to make indent on hand written code */
+      /* otherwise screenshot work too */
+} 
 
 
 header {
@@ -225,9 +232,10 @@ footer {
   background-color: black;
 }
 
-
-  
-
+.dark-mode .shenanigans{
+   color:white;
+   background-color:black;
+}
 /*
 .dark-mode footer {
   background-color: black; // Will put it back someday
