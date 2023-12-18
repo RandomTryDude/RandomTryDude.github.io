@@ -26,7 +26,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "We are now working on production some Writeups to the best of our ability";
+    document.getElementById("demo").innerHTML = "No New CTF announced as of NOW";
   }
 }, 1000);
 
