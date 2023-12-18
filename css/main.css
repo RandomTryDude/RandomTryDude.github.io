@@ -94,8 +94,15 @@ body {
   justify-content: center;
   color: #000;
   background-color: white; /* add to darkmode */
-  width:50vh; /* side of the writeups main part */
+  width:80vh; /* side of the writeups main part */
+  overflow: hidden;
+  
+}
 
+.writeups img {
+  max-width: 100%; /* Ensures the image does not exceed the width of its container */
+  max-height: 100%; /* Ensures the image does not exceed the height of its container */
+  height: auto; /* Allows the image to maintain its aspect ratio */
 }
 .codeblock {
   position:relative;
@@ -104,8 +111,9 @@ body {
   border: 1px solid white; /* add to darkmode */
   border-radius: 4px;
   padding-top:10px;
-  padding-bottom:10px;
-  min-height:10vh;
+  padding-bottom:5px;
+
+
   
 }
 .codeblock .indent{
