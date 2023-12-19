@@ -69,15 +69,15 @@
   <div class="writeups">
     
    <div style="padding-top: 20vh; " id="Beginner"> Beginner </div><hr>
-   <div>Beginner/menace <br> Files given: <br> <img src="writeups/backdoor/friend.jpeg" alt="Friend Image"> <br>a quick exiftool reveal: <img src="writeups/backdoor/exif.jpeg" alt="Flag-Menace"></div> 
+   <div><h2>Beginner/menace</h2> <br> Files given: <br> <img src="writeups/backdoor/friend.jpeg" alt="Friend Image"> <br>a quick exiftool reveal: <img src="writeups/backdoor/exif.jpeg" alt="Flag-Menace"></div> 
    <div class="codeblock">flag{7h3_r34l_ctf_15_7h3_fr13nd5_w3_m4k3_al0ng}</div>
    
    
-    <div>Beginner/Headache <br> we are presented with a file name chal.png <br>if you tried to open it you were greated with "File is not a png" and indeed the magic byte doesnt say "PNG" <br> <img src="writeups/backdoor/xxd.png" alt="Headache"><br> for PNG magic byte should look something like "8950 4e47" correct the header with Hexedit and : <br> <img src="writeups/backdoor/headaches.png" alt="Headache"> </div> 
+    <div><h2Beginner/Headache</h2> <br> we are presented with a file name chal.png <br>if you tried to open it you were greated with "File is not a png" and indeed the magic byte doesnt say "PNG" <br> <img src="writeups/backdoor/xxd.png" alt="Headache"><br> for PNG magic byte should look something like "8950 4e47" correct the header with Hexedit and : <br> <img src="writeups/backdoor/headaches.png" alt="Headache"> </div> 
    <div class="codeblock">flag{sp3ll_15_89_50_4E_47}</div>
    
    
-     <div>Beginner/secret_of_j4ck4l <br> we are presented with a website<img src="writeups/backdoor/jackal.png" alt="Jackal"><br> and it's sources which look like :<div class="codeblock"> ── APP/ <br>└─ message/ , app.py , docker.yaml ,DockerFile ,flag.txt <br><span class="indent">└─ message.txt </span> </div>  <br> Inside the app.py we find 2 things  </div>
+     <div><h2>Beginner/secret_of_j4ck4l/h2> <br> we are presented with a website<img src="writeups/backdoor/jackal.png" alt="Jackal"><br> and it's sources which look like :<div class="codeblock"> ── APP/ <br>└─ message/ , app.py , docker.yaml ,DockerFile ,flag.txt <br><span class="indent">└─ message.txt </span> </div>  <br> Inside the app.py we find 2 things  </div>
      <div class="codeblock"> def ignore_it(file_param):<br><span class="indent"> yoooo = file_param.replace('.', '').replace('/', '')<br> if yoooo != file_param: <br>return "Illegal characters detected in file parameter! <br>return yoooo  </span> </div>
      <div class="codeblock">def useless (file_param):<br><span class="indent"> file_param1 = ignore_it(file_param) <br> file_param2 = another_useless_function(file_param1) <br> file_param3 = ignore_it(file_param2) <br> file_param4 = another_useless_function(file_param3) <br> file_param5 = another_useless_function(file_param4) <br> return file_param5 </span> </div>
      <div> So chall seem to be an LFI( Local File Inclusion) challenge , since it decode our input from url encode 3 time , let's encode it 4 time "../" will become  </div>
@@ -85,9 +85,9 @@
    <div class="codeblock">flag{s1mp13_l0c4l_f1l3_1nclus10n_0dg4af52gav}</div>
    
    
-   <div>Beginner/Secret-of-Kurama <br> Chall : <img src="writeups/backdoor/Chall.png" alt="Kurama"> <br> once connected we are greeted on Kurama with : <img src="writeups/backdoor/WeakKurama.png" alt="Weak"> <br> so there's clearly a way to check our identity , checking the storage the only thing is a JWT token let's check it :<br> <img src="writeups/backdoor/jwt.png" alt="content"> <br> there's indeed our identifier right here , to modify it and pass the check we'll have to try to crack the JWToken <img src="writeups/backdoor/jwtcrack.png" alt="crack"> <br> with our password we can now edit and sign the new jwtoken , once done and our's replaced : <br> <img src="writeups/backdoor/ninetails.png" alt="ninetails"> <div class="codeblock">flag{y0u_ar3_tru3_L34F_sh1n0b1_bf56gtr59894}</div> </div>
+   <div><h2>Beginner/Secret-of-Kurama</h2> <br> Chall : <img src="writeups/backdoor/Chall.png" alt="Kurama"> <br> once connected we are greeted on Kurama with : <img src="writeups/backdoor/WeakKurama.png" alt="Weak"> <br> so there's clearly a way to check our identity , checking the storage the only thing is a JWT token let's check it :<br> <img src="writeups/backdoor/jwt.png" alt="content"> <br> there's indeed our identifier right here , to modify it and pass the check we'll have to try to crack the JWToken <img src="writeups/backdoor/jwtcrack.png" alt="crack"> <br> with our password we can now edit and sign the new jwtoken , once done and our's replaced : <br> <img src="writeups/backdoor/ninetails.png" alt="ninetails"> <div class="codeblock">flag{y0u_ar3_tru3_L34F_sh1n0b1_bf56gtr59894}</div> </div>
    
-   <div>Beginner/Marks <br> Chall : <br> <img src="writeups/backdoor/Marks.png" alt="Marks"> <br> open it in ghidra :<br> <img src="writeups/backdoor/Code.png" alt="Marks">	<br> Based on <div class="codeblock">Score = iVar1 % 0x4b;</div> We know there's is now way to obtain 100/100 instead , let's check <div class="codeblock">__isoc99_scanf(&DAT_0010204c,Mycomment);</div>scanf has a true problem , without giving the precise number of char to take it will read and store in the buffer until the buffer get overflown <br> to do such , we need 2 things <br> the offset and what to write <br> <img src="writeups/backdoor/mem.png" alt="mem"> <br> based on the stack declaration  there's is 0x44 char between them (68) <br> then we want "Score" to be 100 (0x64) so ,Time to build the payload :
+   <div><h2>Beginner/Marks</h2> <br> Chall : <br> <img src="writeups/backdoor/Marks.png" alt="Marks"> <br> open it in ghidra :<br> <img src="writeups/backdoor/Code.png" alt="Marks">	<br> Based on <div class="codeblock">Score = iVar1 % 0x4b;</div> We know there's is now way to obtain 100/100 instead , let's check <div class="codeblock">__isoc99_scanf(&DAT_0010204c,Mycomment);</div>scanf has a true problem , without giving the precise number of char to take it will read and store in the buffer until the buffer get overflown <br> to do such , we need 2 things <br> the offset and what to write <br> <img src="writeups/backdoor/mem.png" alt="mem"> <br> based on the stack declaration  there's is 0x44 char between them (68) <br> then we want "Score" to be 100 (0x64) so ,Time to build the payload :
    <div class="codeblock">    
     host = '34.70.212.151' <br>
     port = 8004 <br>
@@ -116,7 +116,7 @@
    
   
    <div style="padding-top: 20vh; " id="Reverse"> Reverse </div><hr>
-   <div>Open Sesame <br> Chall : <br> <img src="writeups/backdoor/sesame.png" alt="sesame"> <br> Files Given : open_sesame.apk <br> open it with jadx-gui , Function that seem to give the flag if the password is correct : <br> <img src="writeups/backdoor/jadx.png" alt="jadx"> From there since the password is hardcoded same as user : <br> <img src="writeups/backdoor/user.png" alt="user"> <br> two choice : Run it , Or reproduce in python , i did the second here's the reproduced function <br> <a href="writeups/backdoor/solve.py"> Solve.py </a> <br> <div class="codeblock"> flag{aLiBabA_and_forty_thiEveS} </div>
+   <div><h2>Open Sesame</h2> <br> Chall : <br> <img src="writeups/backdoor/sesame.png" alt="sesame"> <br> Files Given : open_sesame.apk <br> open it with jadx-gui , Function that seem to give the flag if the password is correct : <br> <img src="writeups/backdoor/jadx.png" alt="jadx"> From there since the password is hardcoded same as user : <br> <img src="writeups/backdoor/user.png" alt="user"> <br> two choice : Run it , Or reproduce in python , i did the second here's the reproduced function <br> <a href="writeups/backdoor/solve.py"> Solve.py </a> <br> <div class="codeblock"> flag{aLiBabA_and_forty_thiEveS} </div>
    <div> 
     <!-- <hr> so make a line between different categories -->
     
